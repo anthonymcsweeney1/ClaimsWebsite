@@ -17,6 +17,7 @@
      	<input type="password" name="password" placeholder="Password"><br>
 
      	<button type="submit">Login</button>
+	     <a href="Admin.php">SS</a>
      </form>
 </body>
 </html>

@@ -13,7 +13,7 @@ try {
   user_name VARCHAR(255) NOT NULL,
   password VARCHAR(255) NOT NULL,
   name VARCHAR(255),
-  User_Type ARCHAR(255)
+  User_Type VARCHAR(255)
   )";
 
   // use exec() because no results are returned

@@ -1,4 +1,5 @@
 <?php 
+session_save_path("ClaimsWebsite/sess_save");
 session_start(); 
 include "db_conn.php";
 

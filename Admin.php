@@ -691,9 +691,6 @@
         <script src="assets/demo/datatables-demo.js"></script>
     </body>
 </html>
-<?php 
-}else{
-     header("Location: index.php");
-     exit();
+
 }
  ?>

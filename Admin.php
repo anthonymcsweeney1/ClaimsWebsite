@@ -1,4 +1,9 @@
+<?php 
+session_start();
 
+if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
+
+ ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +36,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                        <a class="dropdown-item">Edit Account</a>
+                        <a class="dropdown-item" href="update.php?id=<?php echo $_SESSION['id']; ?>">Edit Account</a>
                         <a class="dropdown-item" href="#">Activity Log</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="logout.php">Logout</a>
@@ -63,13 +68,13 @@
                                      <a class="nav-link" href="search-form.php">Search Claims</a>
                                 </nav>
                             </div>
-                        
-                            
+
+
                               <a class="nav-link" href="ApprovalPage.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                               Approve Claim
                             </a>
-                         
+
                             <a class="nav-link" href="OfferCode.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                Offer Codes
@@ -105,14 +110,14 @@
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:</div>
-                       
+                        <?php echo $_SESSION['name']; ?>: Admin, ID: <?php echo $_SESSION['id']; ?>
                     </div>
                 </nav>
             </div>
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4">Hello, ></h1>
+                        <h1 class="mt-4">Hello, <?php echo $_SESSION['name']; ?></h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Dashboard</li>
                         </ol>
@@ -691,6 +696,9 @@
         <script src="assets/demo/datatables-demo.js"></script>
     </body>
 </html>
-
+<?php 
+}else{
+     header("Location: index.php");
+     exit();
 }
  ?>
